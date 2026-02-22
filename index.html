@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kali ❤️</title>
+
+<style>
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:linear-gradient(45deg,#ff0066,#6600ff,#ffcc00);
+background-size:400% 400%;
+animation:bgmove 8s infinite alternate;
+overflow:hidden;
+font-family:Arial;
+text-align:center;
+color:white;
+}
+
+@keyframes bgmove{
+0%{background-position:left;}
+100%{background-position:right;}
+}
+
+h1{
+font-size:38px;
+animation:glow 1.5s infinite alternate;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 10px white;}
+to{ text-shadow:0 0 30px pink;}
+}
+
+/* PHOTO STYLE */
+img{
+width:220px;
+border-radius:25px;
+box-shadow:0 0 40px pink;
+margin-bottom:20px;
+animation:zoom 3s infinite alternate;
+}
+
+@keyframes zoom{
+from{transform:scale(1);}
+to{transform:scale(1.08);}
+}
+
+button{
+padding:15px 35px;
+font-size:20px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff0066;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+#message{
+margin-top:20px;
+font-size:22px;
+opacity:0;
+transition:1s;
+}
+
+.heart{
+position:absolute;
+color:red;
+font-size:25px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh);}
+100%{transform:translateY(110vh);}
+}
+</style>
+</head>
+
+<body>
+
+<h1>Kali 💖</h1>
+
+<!-- PHOTO ADDED HERE -->
+<img src="784a9a69-c98d-4f8f-820b-3f0fa518fd47.jpeg">
+
+<button onclick="startLove()">YES ❤️</button>
+
+<div id="message"></div>
+
+<script>
+function startLove(){
+
+let msg=document.getElementById("message");
+msg.innerHTML="Rohit ❤️ Kali <br><br> \
+तुम मेरी जिंदगी की सबसे खूबसूरत मुस्कान हो 💕<br>\
+तुमसे फिर से बात करना चाहता हूँ ❤️";
+msg.style.opacity=1;
+
+setInterval(function(){
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*3+2)+"s";
+document.body.appendChild(heart);
+setTimeout(()=>{heart.remove();},5000);
+},300);
+}
+</script>
+
+</body>
+</html>
